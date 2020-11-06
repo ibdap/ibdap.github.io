@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8"/>
+    <title>IBDAP Pinmap and Schematic</title>
+    
+    <link rel="stylesheet" href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.bootcss.com/github-markdown-css/3.0.1/github-markdown.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.main.bundle.css"/>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+  </head>
+
+  <body>
+<nav class="uk-navbar-container uk-background-primary uk-box-shadow-small uk-navbar-transparent uk-light" uk-sticky="animation: uk-animation-slide-top;cls-active: uk-navbar-sticky; top: 0" uk-navbar="uk-navbar">
+
+  <div class="uk-navbar-left">
+    <a class="uk-hidden@s" uk-navbar-toggle-icon="uk-navbar-toggle-icon" uk-toggle="target: #overlay-left-nav"></a>
+    <a class="uk-navbar-item uk-logo" href="/">
+      
+      IBDAP
+    </a>
+  </div>
+  <div class="uk-navbar-right uk-visible@s">
+    <ul class="uk-navbar-nav">
+      <li>
+        <a href="/purchase"><img width="140" src="/images/buy-now-button-orange.png"></a>
+      </li>
+    </ul>
+  </div>
+  <div class="uk-navbar-right uk-hidden@s">
+    <ul class="uk-navbar-nav">
+      <li>
+        <a uk-navbar-toggle-icon="uk-navbar-toggle-icon"></a>
+        <div class="uk-navbar-dropdown uk-light" uk-dropdown="offset: 0">
+          <ul class="uk-nav uk-navbar-dropdown-nav">
+            <li>
+              <a href="/purchase"><img width="140" src="/images/buy-now-button-orange.png"/></a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="uk-card uk-card-default uk-padding-small left-nav uk-visible@m">
+<ul class="uk-nav uk-nav-primary" uk-nav="toggle: > a > span.toggle"><li class=' uk-open  root-nav'>
+
+    <a href="/">Home
+      </a></li><li class='   root-nav'>
+
+    <a href="/voltages/">Voltage and power supply
+      </a></li><li class='  uk-active root-nav'>
+
+    <a href="/pinmap/">Pinmap and Schematic
+      </a></li><li class='   root-nav'>
+
+    <a href="/ibdap-cmsis-dap/">Setup IBDAP as debugger
+      </a></li><li class='   root-nav'>
+
+    <a href="/compile-source-code/">Compile source code
+      </a></li><li class='   root-nav'>
+
+    <a href="/setup-diagram/">Setup diagram
+      </a></li><li class='   root-nav'>
+
+    <a href="/flash-target/">Flashing target firmware
+      </a></li><li class='   root-nav'>
+
+    <a href="/debugging-target/">Debugging target firmware
+      </a></li><li class='   root-nav'>
+
+    <a href="/use-as-dev-board/">IBDAP as dev board
+      </a></li></ul>
+</div>
+
+<div id="overlay-left-nav" uk-offcanvas="overlay: true;">
+<div class="uk-offcanvas-bar">
+  <button class="uk-offcanvas-close" type="button" uk-close="uk-close"></button>
+  <ul class="uk-nav uk-nav-primary" uk-nav="toggle: > a > span.toggle"><li class=' uk-open  root-nav'>
+
+    <a href="/">Home
+      </a></li><li class='   root-nav'>
+
+    <a href="/voltages/">Voltage and power supply
+      </a></li><li class='  uk-active root-nav'>
+
+    <a href="/pinmap/">Pinmap and Schematic
+      </a></li><li class='   root-nav'>
+
+    <a href="/ibdap-cmsis-dap/">Setup IBDAP as debugger
+      </a></li><li class='   root-nav'>
+
+    <a href="/compile-source-code/">Compile source code
+      </a></li><li class='   root-nav'>
+
+    <a href="/setup-diagram/">Setup diagram
+      </a></li><li class='   root-nav'>
+
+    <a href="/flash-target/">Flashing target firmware
+      </a></li><li class='   root-nav'>
+
+    <a href="/debugging-target/">Debugging target firmware
+      </a></li><li class='   root-nav'>
+
+    <a href="/use-as-dev-board/">IBDAP as dev board
+      </a></li></ul>
+</div>
+</div>
+
+<div class="uk-section uk-section-default main-section">
+  <div class="uk-container uk-container-small uk-position-relative">
+    <h1>IBDAP Pinmap and Schematic</h1>
+<hr>
+<p>IBDAP schematic is provided and can be downloaded from the following link:</p>
+<p><a href="https://www.ibdap.net/downloads/ibdap-schematic.pdf">https://www.ibdap.net/downloads/ibdap-schematic.pdf</a></p>
+<img src="/images/ibdap-pinmap.jpg">
+<hr>
+<p><strong>Features:</strong></p>
+<ul>
+<li>NXP LPC11U35FHI33/501 ARM Cortex M0 48Mhz processor</li>
+<li>64kB Flash, 12kB RAM, 2kB EEPROM</li>
+<li>1xUSART, 1xI2C, 2xSPI, 1xUSB2.0, 8xADC(10-bit), 26xGPIO</li>
+<li>GNU gcc-arm and make implementation of CMSIS-DAP with source codes provided.</li>
+<li>Supports mbed programming</li>
+</ul>
+<p><strong>Supported target processors including but not limited to:</strong></p>
+<ul>
+<li>NordicSemi ARM-Cortex M series of microcontrollers</li>
+<li>STM32 ARM Cortex-M series of microcontrollers</li>
+<li>Atmel ARM Cortex-M series of microcontrollers</li>
+<li>NXP ARM Cortex-M series of microcontrollers</li>
+<li>Freescale ARM Cortex-M series of microcontrollers</li>
+</ul>
+
+  </div>
+</div>
+<footer>
+  <div class="uk-light uk-padding-small uk-background-primary uk-box-shadow-small">
+    <div>
+      <span>
+        
+        <a href="/purchase/" class="uk-margin-right uk-text-small"><img width="140" src="/images/buy-now-button-orange.png"/></a>
+      </span>
+      <span class="uk-float-right  uk-visible@s">
+        <a class="uk-margin-right uk-text-small" href="/contact/">Contact</a>
+      </span>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript" src="/assets/js/app.main.bundle.js"></script>
+</body>
+
+</html>

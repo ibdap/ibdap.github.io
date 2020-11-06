@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8"/>
+    <title>Flashing target firmware</title>
+    
+    <link rel="stylesheet" href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.bootcss.com/github-markdown-css/3.0.1/github-markdown.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.main.bundle.css"/>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+  </head>
+
+  <body>
+<nav class="uk-navbar-container uk-background-primary uk-box-shadow-small uk-navbar-transparent uk-light" uk-sticky="animation: uk-animation-slide-top;cls-active: uk-navbar-sticky; top: 0" uk-navbar="uk-navbar">
+
+  <div class="uk-navbar-left">
+    <a class="uk-hidden@s" uk-navbar-toggle-icon="uk-navbar-toggle-icon" uk-toggle="target: #overlay-left-nav"></a>
+    <a class="uk-navbar-item uk-logo" href="/">
+      
+      IBDAP
+    </a>
+  </div>
+  <div class="uk-navbar-right uk-visible@s">
+    <ul class="uk-navbar-nav">
+      <li>
+        <a href="/purchase"><img width="140" src="/images/buy-now-button-orange.png"></a>
+      </li>
+    </ul>
+  </div>
+  <div class="uk-navbar-right uk-hidden@s">
+    <ul class="uk-navbar-nav">
+      <li>
+        <a uk-navbar-toggle-icon="uk-navbar-toggle-icon"></a>
+        <div class="uk-navbar-dropdown uk-light" uk-dropdown="offset: 0">
+          <ul class="uk-nav uk-navbar-dropdown-nav">
+            <li>
+              <a href="/purchase"><img width="140" src="/images/buy-now-button-orange.png"/></a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="uk-card uk-card-default uk-padding-small left-nav uk-visible@m">
+<ul class="uk-nav uk-nav-primary" uk-nav="toggle: > a > span.toggle"><li class=' uk-open  root-nav'>
+
+    <a href="/">Home
+      </a></li><li class='   root-nav'>
+
+    <a href="/voltages/">Voltage and power supply
+      </a></li><li class='   root-nav'>
+
+    <a href="/pinmap/">Pinmap and Schematic
+      </a></li><li class='   root-nav'>
+
+    <a href="/ibdap-cmsis-dap/">Setup IBDAP as debugger
+      </a></li><li class='   root-nav'>
+
+    <a href="/compile-source-code/">Compile source code
+      </a></li><li class='   root-nav'>
+
+    <a href="/setup-diagram/">Setup diagram
+      </a></li><li class='  uk-active root-nav'>
+
+    <a href="/flash-target/">Flashing target firmware
+      </a></li><li class='   root-nav'>
+
+    <a href="/debugging-target/">Debugging target firmware
+      </a></li><li class='   root-nav'>
+
+    <a href="/use-as-dev-board/">IBDAP as dev board
+      </a></li></ul>
+</div>
+
+<div id="overlay-left-nav" uk-offcanvas="overlay: true;">
+<div class="uk-offcanvas-bar">
+  <button class="uk-offcanvas-close" type="button" uk-close="uk-close"></button>
+  <ul class="uk-nav uk-nav-primary" uk-nav="toggle: > a > span.toggle"><li class=' uk-open  root-nav'>
+
+    <a href="/">Home
+      </a></li><li class='   root-nav'>
+
+    <a href="/voltages/">Voltage and power supply
+      </a></li><li class='   root-nav'>
+
+    <a href="/pinmap/">Pinmap and Schematic
+      </a></li><li class='   root-nav'>
+
+    <a href="/ibdap-cmsis-dap/">Setup IBDAP as debugger
+      </a></li><li class='   root-nav'>
+
+    <a href="/compile-source-code/">Compile source code
+      </a></li><li class='   root-nav'>
+
+    <a href="/setup-diagram/">Setup diagram
+      </a></li><li class='  uk-active root-nav'>
+
+    <a href="/flash-target/">Flashing target firmware
+      </a></li><li class='   root-nav'>
+
+    <a href="/debugging-target/">Debugging target firmware
+      </a></li><li class='   root-nav'>
+
+    <a href="/use-as-dev-board/">IBDAP as dev board
+      </a></li></ul>
+</div>
+</div>
+
+<div class="uk-section uk-section-default main-section">
+  <div class="uk-container uk-container-small uk-position-relative">
+    <h1>Flashing target firmware</h1>
+<hr>
+<p><strong>Using OpenOCD</strong></p>
+<p>OpenOCD is software that can communicate with the hardware JTAG port, it bridges hardware IC and your firmware debugging software. OpenOCD can be installed on Windows, Linux and Mac OS.</p>
+<p>[<a href="https://sourceforge.net/projects/openocd/">https://sourceforge.net/projects/openocd/</a>]</p>
+<p>If you want to install the prebuilt binaries instead of building from source code yourself:</p>
+<p>Debian GNU/Linux: <code>$ apt-get install openocd</code><br>
+OS X: <code>$ brew install openocd</code></p>
+<p>Here we demonstrate flashing and debugging using a nRF51822 BLE ARM Cortex M0 device. For other devices please refer to the OpenOCD document and chip manufacturer. In general, you need to know what’s your target chip’s config file is. For nrf51, it’s “target/nrf51.cfg”.</p>
+<p>First run the following command in an admin privileged terminal to start OpenOCD:</p>
+<pre><code class="language-bash">$ openocd.exe -f interface/cmsis-dap.cfg -f target/nrf51.cfg
+</code></pre>
+<p>Then run telnet in another admin privileged terminal to flash your firmware.hex onto nRF51822:</p>
+<pre><code class="language-bash">$ telnet localhost 4444
+&gt; reset halt
+&gt; flash write_image erase /file/path/to//firmware.hex 0x0
+&gt; reset
+&gt; exit
+</code></pre>
+<p>Some chips like nRF51822 have flash protection mechanism enabled, if you ever encountered error while flashing, run mass_erase command to disable the protection before flashing the firmware.</p>
+<pre><code class="language-bash">&gt; nrf51 mass_erase
+</code></pre>
+<p><strong>Using Keil</strong></p>
+<p>From your Keil project, click on &quot;Options for Target&quot; button just besides the target, choose &quot;Debug&quot; tab, select use: &quot;CMSIS-DAP Debugger&quot;, then click &quot;settings&quot;, you should be able to see the &quot;IBDAP-LPC11U35 CMSIS-DAP&quot; device as the picture shown below, if yes, then we are all set.</p>
+<p><strong>Note: For some devices, nRF51822 for example, Keil doesn't have the correct Flash erase algorithm for full-chip erase, if you have any issue flashing, please use OpenOCD method instead.</strong></p>
+<img src="/images/ibdap-keil-options.png">
+
+  </div>
+</div>
+<footer>
+  <div class="uk-light uk-padding-small uk-background-primary uk-box-shadow-small">
+    <div>
+      <span>
+        
+        <a href="/purchase/" class="uk-margin-right uk-text-small"><img width="140" src="/images/buy-now-button-orange.png"/></a>
+      </span>
+      <span class="uk-float-right  uk-visible@s">
+        <a class="uk-margin-right uk-text-small" href="/contact/">Contact</a>
+      </span>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript" src="/assets/js/app.main.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8"/>
+    <title>IBDAP voltage and power supply</title>
+    
+    <link rel="stylesheet" href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.bootcss.com/github-markdown-css/3.0.1/github-markdown.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.main.bundle.css"/>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+  </head>
+
+  <body>
+<nav class="uk-navbar-container uk-background-primary uk-box-shadow-small uk-navbar-transparent uk-light" uk-sticky="animation: uk-animation-slide-top;cls-active: uk-navbar-sticky; top: 0" uk-navbar="uk-navbar">
+
+  <div class="uk-navbar-left">
+    <a class="uk-hidden@s" uk-navbar-toggle-icon="uk-navbar-toggle-icon" uk-toggle="target: #overlay-left-nav"></a>
+    <a class="uk-navbar-item uk-logo" href="/">
+      
+      IBDAP
+    </a>
+  </div>
+  <div class="uk-navbar-right uk-visible@s">
+    <ul class="uk-navbar-nav">
+      <li>
+        <a href="/purchase"><img width="140" src="/images/buy-now-button-orange.png"></a>
+      </li>
+    </ul>
+  </div>
+  <div class="uk-navbar-right uk-hidden@s">
+    <ul class="uk-navbar-nav">
+      <li>
+        <a uk-navbar-toggle-icon="uk-navbar-toggle-icon"></a>
+        <div class="uk-navbar-dropdown uk-light" uk-dropdown="offset: 0">
+          <ul class="uk-nav uk-navbar-dropdown-nav">
+            <li>
+              <a href="/purchase"><img width="140" src="/images/buy-now-button-orange.png"/></a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="uk-card uk-card-default uk-padding-small left-nav uk-visible@m">
+<ul class="uk-nav uk-nav-primary" uk-nav="toggle: > a > span.toggle"><li class=' uk-open  root-nav'>
+
+    <a href="/">Home
+      </a></li><li class='  uk-active root-nav'>
+
+    <a href="/voltages/">Voltage and power supply
+      </a></li><li class='   root-nav'>
+
+    <a href="/pinmap/">Pinmap and Schematic
+      </a></li><li class='   root-nav'>
+
+    <a href="/ibdap-cmsis-dap/">Setup IBDAP as debugger
+      </a></li><li class='   root-nav'>
+
+    <a href="/compile-source-code/">Compile source code
+      </a></li><li class='   root-nav'>
+
+    <a href="/setup-diagram/">Setup diagram
+      </a></li><li class='   root-nav'>
+
+    <a href="/flash-target/">Flashing target firmware
+      </a></li><li class='   root-nav'>
+
+    <a href="/debugging-target/">Debugging target firmware
+      </a></li><li class='   root-nav'>
+
+    <a href="/use-as-dev-board/">IBDAP as dev board
+      </a></li></ul>
+</div>
+
+<div id="overlay-left-nav" uk-offcanvas="overlay: true;">
+<div class="uk-offcanvas-bar">
+  <button class="uk-offcanvas-close" type="button" uk-close="uk-close"></button>
+  <ul class="uk-nav uk-nav-primary" uk-nav="toggle: > a > span.toggle"><li class=' uk-open  root-nav'>
+
+    <a href="/">Home
+      </a></li><li class='  uk-active root-nav'>
+
+    <a href="/voltages/">Voltage and power supply
+      </a></li><li class='   root-nav'>
+
+    <a href="/pinmap/">Pinmap and Schematic
+      </a></li><li class='   root-nav'>
+
+    <a href="/ibdap-cmsis-dap/">Setup IBDAP as debugger
+      </a></li><li class='   root-nav'>
+
+    <a href="/compile-source-code/">Compile source code
+      </a></li><li class='   root-nav'>
+
+    <a href="/setup-diagram/">Setup diagram
+      </a></li><li class='   root-nav'>
+
+    <a href="/flash-target/">Flashing target firmware
+      </a></li><li class='   root-nav'>
+
+    <a href="/debugging-target/">Debugging target firmware
+      </a></li><li class='   root-nav'>
+
+    <a href="/use-as-dev-board/">IBDAP as dev board
+      </a></li></ul>
+</div>
+</div>
+
+<div class="uk-section uk-section-default main-section">
+  <div class="uk-container uk-container-small uk-position-relative">
+    <h1>IBDAP voltage levels and power supply</h1>
+<hr>
+<p>IBDAP supports target boards that run at 3.3V level. The VTSW jumper (please refer to schematic file) is used to enable or disable 3.3V direct power supply to the target board, a convenient way to provide powers directly from debug cable.</p>
+<img src="/images/vtsw-voltage.jpg">
+<p>In case that the target board requires 20-pin 0.05’’ JTAG header or some none standard connector, you can always easily bridge the IBDAP TGT_DBG connector over using the <strong>IBDAPC10J20 ARM 20-pin 0.1'' to Cortex 10-pin 0.05'' JTAG/SWD Adapter</strong> which is included in the IBDAP product.</p>
+<div class="uk-column-1-2 uk-column-divider">
+  <p><img src="/images/ibdapc10j20.jpg" width="400"></p>
+  <p><img src="/images/jtag-swd-connectors.png" width="400"></p>
+</div>
+
+  </div>
+</div>
+<footer>
+  <div class="uk-light uk-padding-small uk-background-primary uk-box-shadow-small">
+    <div>
+      <span>
+        
+        <a href="/purchase/" class="uk-margin-right uk-text-small"><img width="140" src="/images/buy-now-button-orange.png"/></a>
+      </span>
+      <span class="uk-float-right  uk-visible@s">
+        <a class="uk-margin-right uk-text-small" href="/contact/">Contact</a>
+      </span>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript" src="/assets/js/app.main.bundle.js"></script>
+</body>
+
+</html>

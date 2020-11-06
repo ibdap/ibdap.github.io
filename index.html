@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8"/>
+    <title>IBDAP CMSIS-DAP JTAG/SWD Debug Adapter</title>
+    
+    <link rel="stylesheet" href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.bootcss.com/github-markdown-css/3.0.1/github-markdown.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.main.bundle.css"/>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+  </head>
+
+  <body>
+<nav class="uk-navbar-container uk-background-primary uk-box-shadow-small uk-navbar-transparent uk-light" uk-sticky="animation: uk-animation-slide-top;cls-active: uk-navbar-sticky; top: 0" uk-navbar="uk-navbar">
+
+  <div class="uk-navbar-left">
+    <a class="uk-hidden@s" uk-navbar-toggle-icon="uk-navbar-toggle-icon" uk-toggle="target: #overlay-left-nav"></a>
+    <a class="uk-navbar-item uk-logo" href="/">
+      
+      IBDAP
+    </a>
+  </div>
+  <div class="uk-navbar-right uk-visible@s">
+    <ul class="uk-navbar-nav">
+      <li>
+        <a href="/purchase"><img width="140" src="/images/buy-now-button-orange.png"></a>
+      </li>
+    </ul>
+  </div>
+  <div class="uk-navbar-right uk-hidden@s">
+    <ul class="uk-navbar-nav">
+      <li>
+        <a uk-navbar-toggle-icon="uk-navbar-toggle-icon"></a>
+        <div class="uk-navbar-dropdown uk-light" uk-dropdown="offset: 0">
+          <ul class="uk-nav uk-navbar-dropdown-nav">
+            <li>
+              <a href="/purchase"><img width="140" src="/images/buy-now-button-orange.png"/></a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="uk-card uk-card-default uk-padding-small left-nav uk-visible@m">
+<ul class="uk-nav uk-nav-primary" uk-nav="toggle: > a > span.toggle"><li class='  uk-active root-nav'>
+
+    <a href="/">Home
+      </a></li><li class='   root-nav'>
+
+    <a href="/voltages/">Voltage and power supply
+      </a></li><li class='   root-nav'>
+
+    <a href="/pinmap/">Pinmap and Schematic
+      </a></li><li class='   root-nav'>
+
+    <a href="/ibdap-cmsis-dap/">Setup IBDAP as debugger
+      </a></li><li class='   root-nav'>
+
+    <a href="/compile-source-code/">Compile source code
+      </a></li><li class='   root-nav'>
+
+    <a href="/setup-diagram/">Setup diagram
+      </a></li><li class='   root-nav'>
+
+    <a href="/flash-target/">Flashing target firmware
+      </a></li><li class='   root-nav'>
+
+    <a href="/debugging-target/">Debugging target firmware
+      </a></li><li class='   root-nav'>
+
+    <a href="/use-as-dev-board/">IBDAP as dev board
+      </a></li></ul>
+</div>
+
+<div id="overlay-left-nav" uk-offcanvas="overlay: true;">
+<div class="uk-offcanvas-bar">
+  <button class="uk-offcanvas-close" type="button" uk-close="uk-close"></button>
+  <ul class="uk-nav uk-nav-primary" uk-nav="toggle: > a > span.toggle"><li class='  uk-active root-nav'>
+
+    <a href="/">Home
+      </a></li><li class='   root-nav'>
+
+    <a href="/voltages/">Voltage and power supply
+      </a></li><li class='   root-nav'>
+
+    <a href="/pinmap/">Pinmap and Schematic
+      </a></li><li class='   root-nav'>
+
+    <a href="/ibdap-cmsis-dap/">Setup IBDAP as debugger
+      </a></li><li class='   root-nav'>
+
+    <a href="/compile-source-code/">Compile source code
+      </a></li><li class='   root-nav'>
+
+    <a href="/setup-diagram/">Setup diagram
+      </a></li><li class='   root-nav'>
+
+    <a href="/flash-target/">Flashing target firmware
+      </a></li><li class='   root-nav'>
+
+    <a href="/debugging-target/">Debugging target firmware
+      </a></li><li class='   root-nav'>
+
+    <a href="/use-as-dev-board/">IBDAP as dev board
+      </a></li></ul>
+</div>
+</div>
+
+<div class="uk-section uk-section-default main-section">
+  <div class="uk-container uk-container-small uk-position-relative">
+    <h1>IBDAP</h1>
+<hr>
+<p>IBDAP is an open source, low cost, cross-platform and vender independent CMSIS-DAP JTAG/SWD debug adapter for programming and debugging ARM Cortex M microcontrollers. It provides debugging functions like stepping, breakpoints, watch points and firmware programming etc., making microcontroller programming easy and affordable. It's fully supported by Keil, Eclipse, OpenOCD, GNU GDB, IAR and other commonly used debugging tools across Windows, Linux and Mac OS.</p>
+<p>Besides being functioning as a JTAG/SWD debug probe, IBDAP could also be used as an mbed development board. It has an ARM Cortex M0 processor running at 48Mhz and has peripherals like UART, I2C, SPI, USB. It can be used in applications like USB audio devices, USB mouse/keyboards, USB mass storage devices, USB-TTL adapter device and many many more. It also has 10-bit high precision ADC peripherals which make IBDAP an ideal device for any sensor projects.</p>
+<img src="/images/ibdap-kit.jpg">
+<h2>Why IBDAP?</h2>
+<hr>
+<p>Debug adapters are expensive, some could cost thousands of dollars, some may not be compatible among different vendors. Luckily, ARM standardized the debugging interface which is called CMSIS-DAP and released the firmware implementation on some processors, however, you still need a Keil MDK Professional edition software in order to build the firmware, even the open source one provided by mbed and the price for Keil Professional is intimidating. All these barriers has become the first issue that every inventor is facing, and we need a solution! IBDAP's objective is to become an affordable open source &amp; open hardware CMSIS-DAP JTAG/SWD debug probe implementation using gcc &amp; makefile. Anyone can modify and embed a debug probe on its own device easily with everything under its control.</p>
+<p><a href="/purchase"><img width="300" src="/images/buy-now-button-orange.png"></a></p>
+
+  </div>
+</div>
+<footer>
+  <div class="uk-light uk-padding-small uk-background-primary uk-box-shadow-small">
+    <div>
+      <span>
+        
+        <a href="/purchase/" class="uk-margin-right uk-text-small"><img width="140" src="/images/buy-now-button-orange.png"/></a>
+      </span>
+      <span class="uk-float-right  uk-visible@s">
+        <a class="uk-margin-right uk-text-small" href="/contact/">Contact</a>
+      </span>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript" src="/assets/js/app.main.bundle.js"></script>
+</body>
+
+</html>
